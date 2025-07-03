@@ -11,12 +11,10 @@ const showModal = ref(false);
 const editTask = ref(null);
 
 const handleAddTask = async (taskData) => {
-    console.log('handleAddTask recebeu:', taskData);
     await taskStore.createTask(taskData);
 };
 
 const handleUpdateTask = async (id, taskData) => {
-    console.log('handleUpdateTask recebeu:', id, taskData);
     await taskStore.updateTask(id, taskData);
 };
 
@@ -70,7 +68,6 @@ onMounted(() => {
             </button>
         </div>
 
-        <!-- Modal para criar/editar tarefas -->
         <TaskModal
             :show="showModal"
             :task="editTask"
@@ -314,4 +311,4 @@ onMounted(() => {
     align-items: center;
   }
 }
-</style>
+</style> 

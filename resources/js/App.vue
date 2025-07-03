@@ -1,13 +1,13 @@
 <script setup>
 import Appbar from '@/components/Appbar.vue';
 import Footer from '@/components/Footer.vue';
-import TasksContainer from '@/components/TasksContainer.vue';
+import TaskList from '@/components/TaskList.vue';
 </script>
 
 <template>
   <div class="content-tasks">
     <Appbar />
-    <TasksContainer />
+    <TaskList />
     <Footer />
   </div>
 </template>

@@ -6,6 +6,36 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* Correções para overflow horizontal */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.content-tasks {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}
+
+/* Correção para o header */
+.header {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Correção para o footer */
+.footer {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 input:focus + label,
 input:valid + label,
 .input.long:focus + label,

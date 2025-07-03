@@ -1,6 +1,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import { createPinia } from 'pinia';
+import '../css/app.css';
 import App from './App.vue';
 
 const app = createApp(App);
