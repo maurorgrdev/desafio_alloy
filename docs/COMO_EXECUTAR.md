@@ -7,6 +7,7 @@
 - ✅ **Composer**
 - ✅ **Node.js 18+**
 - ✅ **SQLite** (já incluído no PHP)
+- ✅ **Redis** (opcional, para melhor performance)
 
 ### **Verificar instalação:**
 ```bash
@@ -21,13 +22,16 @@ node --version
 
 # Verificar npm
 npm --version
+
+# Verificar Redis (se instalado)
+redis-cli ping
 ```
 
 ## 🚀 Instalação e Configuração
 
 ### **1. Clone o projeto**
 ```bash
-git clone https://github.com/maurorgrdev/desafio_alloy.git
+git clone <url-do-repositorio>
 cd testealloylaravel
 ```
 
@@ -56,6 +60,9 @@ touch database/database.sqlite
 
 # Executar migrações
 php artisan migrate
+
+# Executar seeders (dados de teste)
+php artisan db:seed
 ```
 
 ### **5. Configurar cache e filas**
@@ -66,6 +73,28 @@ php artisan cache:clear
 # Criar tabela de jobs (se não existir)
 php artisan queue:table
 php artisan migrate
+```
+
+### **6. Configurar Redis (opcional - para melhor performance)**
+```bash
+# Instalar Redis (Ubuntu/Debian)
+sudo apt update
+sudo apt install redis-server
+sudo systemctl start redis-server
+
+# Instalar Redis (macOS)
+brew install redis
+brew services start redis
+
+# Verificar se Redis está funcionando
+redis-cli ping
+# Deve retornar: PONG
+
+# Configurar .env para usar Redis
+# CACHE_DRIVER=redis
+# QUEUE_CONNECTION=redis
+# REDIS_HOST=127.0.0.1
+# REDIS_PORT=6379
 ```
 
 ## 🎯 Executar o projeto
@@ -179,8 +208,11 @@ php artisan migrate
 # Reverter migrações
 php artisan migrate:rollback
 
+# Executar seeders
+php artisan db:seed
+
 # Limpar banco e recriar
-php artisan migrate:fresh
+php artisan migrate:fresh --seed
 ```
 
 ### **Cache:**
@@ -190,6 +222,10 @@ php artisan cache:clear
 
 # Ver cache
 php artisan cache:table
+
+# Se usando Redis
+redis-cli keys "*cache*"
+redis-cli flushall
 ```
 
 ### **Filas:**
@@ -202,6 +238,10 @@ php artisan queue:monitor
 
 # Limpar fila
 php artisan queue:clear
+
+# Se usando Redis
+redis-cli llen queues:default
+redis-cli del queues:default
 ```
 
 ### **Logs:**
@@ -236,7 +276,7 @@ ls -la database/database.sqlite
 # Recriar banco
 rm database/database.sqlite
 touch database/database.sqlite
-php artisan migrate
+php artisan migrate --seed
 ```
 
 #### **3. Erro de dependências**
@@ -275,6 +315,10 @@ php artisan cache:table
 
 # Status das filas
 php artisan queue:monitor
+
+# Status do Redis (se instalado)
+redis-cli info
+redis-cli keys "*"
 ```
 
 ## 📊 Monitoramento
@@ -285,6 +329,7 @@ php artisan queue:monitor
 3. ✅ **Cache:** Segunda requisição mais rápida
 4. ✅ **Filas:** `php artisan queue:work` rodando
 5. ✅ **Jobs:** Logs em `storage/logs/laravel.log`
+6. ✅ **Redis:** `redis-cli ping` retorna PONG (se instalado)
 
 ## 🎯 Próximos passos
 
