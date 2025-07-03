@@ -27,7 +27,7 @@ npm --version
 
 ### **1. Clone o projeto**
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/maurorgrdev/desafio_alloy.git
 cd testealloylaravel
 ```
 
