@@ -74,8 +74,7 @@ Este é um teste técnico para desenvolvedores da Alloy, consistindo na implemen
 │   ├── Observers/           # TaskObserver
 │   └── Http/Middleware/     # CacheMiddleware
 ├── database/
-│   ├── migrations/          # Tabela tasks
-│   └── seeders/            # TaskSeeder
+│   └── migrations/          # Tabela tasks
 ├── resources/
 │   ├── js/
 │   │   ├── components/      # TaskList, TaskModal, TaskForm
@@ -97,7 +96,6 @@ php artisan key:generate
 # Configure banco de dados
 touch database/database.sqlite
 php artisan migrate
-php artisan db:seed
 
 # Execute o projeto
 composer run dev
