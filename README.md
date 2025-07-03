@@ -90,18 +90,21 @@ Este é um teste técnico para desenvolvedores da Alloy, consistindo na implemen
 
 ```bash
 # Clone e configure
-cp .env.example .env
+cp .env.example .env  # ou crie o arquivo .env manualmente
 php artisan key:generate
 
 # Configure banco de dados
 touch database/database.sqlite
 php artisan migrate
+php artisan db:seed
 
 # Execute o projeto
 composer run dev
 ```
 
 Acesse: http://localhost:8000
+
+**📖 Para instruções completas, consulte [Como executar](./docs/COMO_EXECUTAR.md)**
 
 ## 📖 Documentação Detalhada
 
@@ -113,5 +116,31 @@ Para informações completas sobre implementação, configuração e uso, consul
 - [🏗️ Arquitetura do projeto](./docs/ARQUITETURA.md)
 - [🔧 Configurações](./docs/CONFIGURACOES.md)
 
+## 🎯 Funcionalidades Demonstradas
+
+### **Frontend**
+- ✅ Interface moderna e responsiva
+- ✅ Modal para criar/editar tarefas
+- ✅ Lista de tarefas com ações
+- ✅ Formulários com validação
+- ✅ Estados de loading e feedback
+
+### **Backend**
+- ✅ API RESTful completa
+- ✅ Validação de dados
+- ✅ Cache inteligente
+- ✅ Sistema de filas
+- ✅ Jobs assíncronos
+- ✅ Soft deletes
+
+## 🚀 Próximos Passos
+
+1. **Clone o repositório**
+2. **Siga as instruções** em [Como executar](./docs/COMO_EXECUTAR.md)
+3. **Teste as funcionalidades** listadas
+4. **Explore a documentação** completa
+
 ---
+
+**🎉 Projeto pronto para avaliação!**
 
