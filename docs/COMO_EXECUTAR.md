@@ -7,7 +7,7 @@
 - ✅ **Composer**
 - ✅ **Node.js 18+**
 - ✅ **SQLite** (já incluído no PHP)
-- ✅ **Redis** (opcional, para melhor performance)
+- ✅ **Redis** 
 
 ### **Verificar instalação:**
 ```bash
@@ -31,7 +31,7 @@ redis-cli ping
 
 ### **1. Clone o projeto**
 ```bash
-git clone <url-do-repositorio>
+git clone https://github.com/maurorgrdev/desafio_alloy.git
 cd testealloylaravel
 ```
 
