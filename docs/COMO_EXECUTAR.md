@@ -56,9 +56,6 @@ touch database/database.sqlite
 
 # Executar migrações
 php artisan migrate
-
-# Executar seeders (dados de teste)
-php artisan db:seed
 ```
 
 ### **5. Configurar cache e filas**
@@ -182,11 +179,8 @@ php artisan migrate
 # Reverter migrações
 php artisan migrate:rollback
 
-# Executar seeders
-php artisan db:seed
-
 # Limpar banco e recriar
-php artisan migrate:fresh --seed
+php artisan migrate:fresh
 ```
 
 ### **Cache:**
@@ -242,7 +236,7 @@ ls -la database/database.sqlite
 # Recriar banco
 rm database/database.sqlite
 touch database/database.sqlite
-php artisan migrate --seed
+php artisan migrate
 ```
 
 #### **3. Erro de dependências**
